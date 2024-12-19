@@ -223,6 +223,69 @@
   </div>
 </section>
 
+
+<section class="section">
+    <div class="container is-max-widescreen">
+        <div class="rows">
+            <div class="rows is-centered">
+                <div class="row is-full-width">
+                    <h2 class="title is-3" style="display: flex; justify-content: center; align-items: center;">
+                        <span class="dvima">Overview</span>
+                    </h2>
+                    <br>
+                    <span style="font-size: 125%">
+                        <strong>MatchMaker</strong> automatically generates assembly pairs in three stages:  
+                        <ol>
+                            <li><strong>Contact-Surface Detection:</strong> Identifies the assembly axis and contact faces of an initially sampled asset for the assembly pair.</li>
+                            <li><strong>Shape Completion:</strong> Utilizes diffusion models to complete the rest of the asset, generating the second asset of the pair.</li>
+                            <li><strong>Clearance Specification:</strong> Erodes the contacting surfaces to prevent interpenetration and achieve the desired clearance.</li>
+                        </ol>
+                        We further demonstrate that our generated asset pairs are simulatable by training assembly policies within NVIDIA Isaac Simulator and realizable by deploying the learned policies with 3D-printed assets in the real world.
+                    </span>
+                    <img src="./static/images/teaser-3.png" alt="Teaser Image" 
+                         style="display: block; margin-left: auto; margin-right: auto; max-width: 80%;">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container is-max-widescreen">
+        <div class="rows">
+            <div class="rows is-centered">
+                <div class="row is-full-width">
+                    <h2 class="title is-3" style="display: flex; justify-content: center; align-items: center;">
+                        <span class="dvima">Pipeline</span>
+                    </h2>
+
+                    <!-- Contact-Surface Detection -->
+                    <div style="text-align: center; margin: 20px 0;">
+                        <h3 class="title is-5">Contact-Surface Detection</h3>
+                        <img src="./static/videos/MatchMaker1.gif" alt="Contact-Surface Detection GIF" 
+                             style="display: block; margin-left: auto; margin-right: auto; max-width: 80%;">
+                    </div>
+
+                    <!-- Shape Completion -->
+                    <div style="text-align: center; margin: 20px 0;">
+                        <h3 class="title is-5">Shape Completion</h3>
+                        <img src="./static/videos/MatchMaker2.gif" alt="Shape Completion GIF" 
+                             style="display: block; margin-left: auto; margin-right: auto; max-width: 80%;">
+                    </div>
+
+                    <!-- Clearance Specification -->
+                    <div style="text-align: center; margin: 20px 0;">
+                        <h3 class="title is-5">Clearance Specification</h3>
+                        <img src="./static/videos/MatchMaker3.gif" alt="Clearance Specification GIF" 
+                             style="display: block; margin-left: auto; margin-right: auto; max-width: 80%;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
 <section class="hero is-light is-small">
   <div class="hero-body">
     <div class="container">
