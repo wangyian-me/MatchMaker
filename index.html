@@ -371,6 +371,38 @@
 </section>
 
 
+<section class="section" id="qa">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Q & A</h2>
+    
+    <!-- Video Section -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <video id="qa-video" controls>
+          <source src="./static/videos/10144_direction2.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+    
+    <!-- Questions and Answers -->
+    <div class="content">
+      <ul>
+        <li>
+          <strong>Q: What happens when assembly axis detection fails?</strong>
+          <p>A: If the axis detection pipeline fails, the generation process will still proceed, potentially producing valid asset pairs for insertion tasks. Specifically, if the retrieved object is a plug and axis detection fails, the system may generate receptacles that accommodate the plug from an unintended direction. While technically valid, this may not align with common sense.
+                or instance, a cylindrical plug is typically inserted along its height (up-down), but an incorrect axis could result in receptacles that accept the cylinder from the side, similar to how a battery is placed.
+                If the retrieved object is a receptacle, it may lack suitable geometry for insertion from an alternative direction. Take the video above as an example, when asset 10174 is detected to be inserted from another direction, the resulting paired asset still looks matched but is no longer a insertion behavior.
+          </p>
+        </li>
+        <li>
+          <strong>Q: In cases where the assembly object has an unsealed bottom surface (e.g., peg gear assembly), does the "Contact Surface Extraction" method still work effectively?</strong>
+          <p>A: Yes. Actually, half of the cases are of unsealed bottom such as 10168, 10144, 10174, 10068, 11159. They are just not rendered from the angle that can see through them. In the above video, we can see that the asset 10174 is actually with unsealed bottom surface.</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
 
 
 <!-- <section class="section" id="BibTeX">
