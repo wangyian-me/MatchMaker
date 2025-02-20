@@ -373,7 +373,7 @@
 
 <section class="section" id="qa">
   <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered">Q & A</h2>
+    <h2 class="title is-3 has-text-centered">FAQs</h2>
     
     <!-- Video Section -->
     <div class="columns is-centered has-text-centered">
@@ -390,19 +390,43 @@
       <ul>
         <li>
           <strong>Q: What happens when assembly axis detection fails?</strong>
-          <p>A: If the axis detection pipeline fails, the generation process will still proceed, potentially producing valid asset pairs for insertion tasks. Specifically, if the retrieved object is a plug and axis detection fails, the system may generate receptacles that accommodate the plug from an unintended direction. While technically valid, this may not align with common sense.
-                or instance, a cylindrical plug is typically inserted along its height (up-down), but an incorrect axis could result in receptacles that accept the cylinder from the side, similar to how a battery is placed.
-                If the retrieved object is a receptacle, it may lack suitable geometry for insertion from an alternative direction. Take the video above as an example, when asset 10174 is detected to be inserted from another direction, the resulting paired asset still looks matched but is no longer a insertion behavior.
-          </p>
+          <p>A: Axis detection leverages the semantic common-sense knowledge of VLM models, so it is possible that the detected axis is different from the user’s intended one. If the axis detection pipeline fails, the generation process will still proceed and may produce valid asset pairs for insertion tasks. However, unintended orientations may occur.</p>
+          <p>If the retrieved object is a plug and axis detection fails, the system might generate receptacles that accommodate the plug from an unintended direction. While technically valid, this may not align with common sense.</p>
+          <p>For example, a cylindrical plug is typically inserted along its height (up-down), but an incorrect axis might result in receptacles that accept the cylinder from the side, similar to how a battery is placed.</p>
+          <p>If the retrieved object is a receptacle, it may lack suitable geometry for insertion from an alternative direction.</p>
+          <p>For instance, as seen in the video above, when asset 10174 is detected for insertion from another direction, the resulting paired asset may still appear visually matched but no longer represents a valid insertion behavior.</p>
         </li>
+        
         <li>
-          <strong>Q: In cases where the assembly object has an unsealed bottom surface (e.g., peg gear assembly), does the "Contact Surface Extraction" method still work effectively?</strong>
-          <p>A: Yes. Actually, half of the cases are of unsealed bottom such as 10168, 10144, 10174, 10068, 11159. They are just not rendered from the angle that can see through them. In the above video, we can see that the asset 10174 is actually with unsealed bottom surface.</p>
+          <strong>Q: Does the "Contact Surface Extraction" method still work effectively in cases where the assembly object has an unsealed bottom surface (e.g., peg-gear assembly)?</strong>
+          <p>A: Yes, the method remains effective.</p>
+          <p>In fact, many cases involve objects with unsealed bottoms, such as assets 10168, 10144, 10174, 10068, and 11159.</p>
+          <p>These cases are just not always rendered from an angle that makes the unsealed bottom visible.</p>
+          <p>In the images below, asset 10144, 10168, 10174 clearly demonstrates an unsealed bottom surface, confirming the method's applicability.</p>
+          
+          <!-- Images Section -->
+          <div class="columns is-centered">
+            <div class="column is-one-third">
+              <img src="./static/images/front_10144.jpg" alt="Asset 10174 View 1">
+            </div>
+            <div class="column is-one-third">
+              <img src="./static/images/front_10168.jpg" alt="Asset 10174 View 2">
+            </div>
+            <div class="column is-one-third">
+              <img src="./static/images/front_10174.jpg" alt="Asset 10174 View 3">
+            </div>
+          </div>
+        </li>
+        
+        <li>
+          <strong>Q: Can MatchMaker be applied to multi-stage assembly?</strong>
+          <p>A: Partially, the clearance-specification component of MatchMaker can be used to adapt existing multi-part assembly datasets to be simulation-compatible or to have user-specified clearances.</p>
         </li>
       </ul>
     </div>
   </div>
 </section>
+
 
 
 <!-- <section class="section" id="BibTeX">
