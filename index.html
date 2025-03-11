@@ -128,7 +128,7 @@
                 </a>
               </span> -->
               <span class="link-block">
-                <a href=""
+                <a href="https://arxiv.org/abs/2503.05887"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -199,9 +199,9 @@
             perception noise, and control error; however, the development of a generalist (i.e., multi-task) 
             agent for a broad range of assembly tasks has been limited by the need to manually curate assembly assets, 
             which greatly constrains the number and diversity of assembly problems that can be used for policy learning. 
-            Inspired by recent success of using Generative AI to scale up robot learning, we propose MatchMaker, a pipeline to automatically generate diverse, 
+            Inspired by recent success of using generative AI to scale up robot learning, we propose MatchMaker, a pipeline to automatically generate diverse, 
             simulation-compatible assembly asset pairs to facilitate learning assembly skills. Specifically, MatchMaker can 1) take a simulation-incompatible, 
-            interpenetrating asset pair as input, and automatically convert it into a simulation-compatible, interpenetration-free pair, 2) take an arbitrary single asset as input , 
+            interpenetrating asset pair as input, and automatically convert it into a simulation-compatible, interpenetration-free pair, 2) take an arbitrary single asset as input, 
             and generate a geometrically-mating asset to create an asset pair, 3) automatically erode contact surfaces from (1) or (2) according to a user-specified clearance parameter to generate realistic parts.
           </p>
         </div>
@@ -242,6 +242,7 @@
                         </ol>
                         We further demonstrate that our generated asset pairs are simulatable by training assembly policies within NVIDIA Isaac Simulator and realizable by deploying the learned policies with 3D-printed assets in the real world.
                     </span>
+                    <br>
                     <img src="./static/images/teaser-3.png" alt="Teaser Image" 
                          style="display: block; margin-left: auto; margin-right: auto; max-width: 80%;">
                 </div>
@@ -396,7 +397,7 @@
           <p>If the retrieved object is a receptacle, it may lack suitable geometry for insertion from an alternative direction.</p>
           <p>For instance, as seen in the video above, when asset 10174 is detected for insertion from another direction, the resulting paired asset may still appear visually matched but no longer represents a valid insertion behavior.</p>
         </li>
-        
+        <br>
         <li>
           <strong>Q: Does the "Contact Surface Extraction" method still work effectively in cases where the assembly object has an unsealed bottom surface (e.g., peg-gear assembly)?</strong>
           <p>A: Yes, the method remains effective.</p>
@@ -417,15 +418,15 @@
             </div>
           </div>
         </li>
-        
+        <br>
         <li>
           <strong>Q: Can MatchMaker be applied to multi-stage assembly?</strong>
           <p>A: Partially, the clearance-specification component of MatchMaker can be used to adapt existing multi-part assembly datasets to be simulation-compatible or to have user-specified clearances.</p>
         </li>
-
+        <br>
         <li>
           <strong>Q: The clearance is user-defined in the paper. Could a default clearance be determined automatically using LLMs/VLMs based on the assembly pair’s type and function?</strong>
-          <p>A: Automatic determination of clearance is an interesting open problem. Unclear if/how to get VLMs to accurately determine that info.</p>
+          <p>A: Automatic determination of clearance is an interesting open problem. It is unclear if VLMs can accurately infer suitable clearance values from images.</p>
           <p>For now, we focus on two criteria: simulation-compatibility and task difficulty. We want clearance as realistic as possible without simulation explosion and such that the task is learnable.</p>
           <p>Full analysis of the interplay between clearance and task difficulty is an avenue for future work that is enabled by MatchMaker.</p>
         </li>
